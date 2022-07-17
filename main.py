@@ -35,6 +35,7 @@ async def upload(username, request: Request):
             "request": request,
             "mood": data['mood'],
             "username": username,
+            "quote": data['quote'],
             "total_contributions": data['total_contributions'],
             "weeks": data["weeks"],
         })

@@ -6,15 +6,25 @@ def points_to_pet(points):
   if points == 0:
     return "dead.png"
   elif points == 1:
-    return "freak.webp"
+    return "freak.gif"
   elif points == 2:
-    return "whine.webp"
+    return "whine.gif"
   elif points == 3:
     return "sleep.gif"
   elif points < 6:
-    return "happy.webp"
+    return "happy.gif"
   else:
-    return "dancing.webp"
+    return "dancing.gif"
+
+def points_to_quote(points):
+  if points == 0:
+    return "oops... looks like you need a commit"
+  elif points < 3:
+    return "pull request, quick!"
+  elif points == 3:
+    return "the pet is a lil tired"
+  else:
+    return "keep up the good work!"
 
 
 def fetch_info(username):
@@ -46,18 +56,20 @@ def fetch_info(username):
 
   r = requests.post(endpoint, json={"query": query}, headers=headers)
   data = r.json()['data']['user']
-  total_contributions = data['contributionsCollection']['contributionCalendar']['totalContributions']
   last_contributions = data['contributionsCollection']['contributionCalendar']['weeks'][-2:]
   contribution_days = last_contributions[0]["contributionDays"] + last_contributions[1]["contributionDays"][:-1]
   contribution_days.reverse()
   points = 0
+  recent_contribution_count = 0
   for i in range(7):
     if contribution_days[i]['contributionCount']:
+      recent_contribution_count += contribution_days[i]['contributionCount']
       points+= 1
     
   return {
-    "total_contributions": total_contributions,
     "mood": points_to_pet(points),
+    "total_contributions": recent_contribution_count,
+    "quote": points_to_quote(points),
     "weeks": data['contributionsCollection']['contributionCalendar']['weeks'],
   }
 
