@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container text-center py-5 mb-3" x-data="{}">
+
+  <img src="/static/{{ mood | safe }}" height="300" />
+  <h1>{{ username }}</h1>
+  total contributions: {{ total_contributions }}
+  <br/>
+  <div style="text-align: -webkit-center;" class="my-4">
+    <div id="pixel-art-area">
+      {% for week in weeks %}
+        {% for day in week['contributionDays'] %}
+          <div class="pixel" style="background-color:{{day['color']}};"></div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+
+  
+</div>
+
+
+
+{% endblock %}
