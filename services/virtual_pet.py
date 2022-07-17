@@ -4,17 +4,17 @@ from dotenv import load_dotenv
 
 def points_to_pet(points):
   if points == 0:
-    return "dead.png"
+    return "dead"
   elif points == 1:
-    return "freak.gif"
+    return "freak"
   elif points == 2:
-    return "whine.gif"
+    return "whine"
   elif points == 3:
-    return "sleep.gif"
+    return "sleep"
   elif points < 6:
-    return "happy.gif"
+    return "happy"
   else:
-    return "dancing.gif"
+    return "dancing"
 
 def points_to_quote(points):
   if points == 0:
@@ -29,7 +29,7 @@ def points_to_quote(points):
 
 def fetch_info(username):
   load_dotenv()
-  accessToken = os.getenv('GITHUB_ACCESS_TOKEN')
+  accessToken = os.getenv('ACCESS_TOKEN')
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}

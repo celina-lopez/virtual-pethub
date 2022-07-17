@@ -27,13 +27,14 @@ async def index(request: Request):
 
 
 @app.get("/{username}")
-async def upload(username, request: Request):
+async def upload(username, request: Request, theme: str = "normal"):
   load_dotenv()
   data = virtual_pet.fetch_info(username)
 
   return templates.TemplateResponse("virtual_pet.html", {
             "request": request,
             "mood": data['mood'],
+            "theme": theme,
             "username": username,
             "quote": data['quote'],
             "total_contributions": data['total_contributions'],
