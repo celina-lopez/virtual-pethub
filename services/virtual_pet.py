@@ -28,8 +28,8 @@ def points_to_quote(points):
 
 
 def fetch_info(username):
-  load_dotenv()
-  accessToken = os.getenv('ACCESS_TOKEN')
+  # load_dotenv()
+  accessToken = "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"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
