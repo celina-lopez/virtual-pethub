@@ -13,18 +13,25 @@
     </div>
     <i>A virtual pet based on your contributions</i>
   </div>
-  <form id="form" >
-    <input type="text" class="form-control" placeholder="Github username" name="username">
-    <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label>
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </form>
+
+  <label class="mr-sm-2" for="username">Username</label>
+  <input type="text" class="form-control form-control-lg" placeholder="Github username" name="username" id="username">
+  <label class="mr-sm-2 mt-2" for="theme">Preference</label>
+  <select class="form-control form-control-lg mr-sm-2" name="theme" id="theme">
+    <option selected value="normal">normal</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+  </select>
+  <button class="btn btn-main w-100 btn-lg mt-3" id="submit">Submit</button>
+
 </div>
+<script>
+  $(function() {
+    $("#submit").click(function() {
+      window.location.href = `/${$('#username').val()}?theme=${$('#theme').val()}`
+    });
+  });
+</script>
 
 <div class="footer-copyright text-center py-3">
   <i>Made with <a target="_blank" href="https://forever-free-cloud-app-starter.chriszhu.me/">forever free cloud app starter</a></i>
