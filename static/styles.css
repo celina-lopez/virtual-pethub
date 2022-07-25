@@ -1,12 +1,12 @@
 body {
-  background-color: #fde7e2;
+  background-color: #ffffff;
   height: 100%;
-  font-family: 'Rubik', sans-serif;
-  color: #272b57;
+  font-family: 'Montserrat', sans-serif;
+  color: #520083;
 }
 
 .fancy-font {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Alfa Slab One', cursive;
   font-weight: 200;
 }
 .fancy-font b {
@@ -14,16 +14,16 @@ body {
 }
 
 .text-main {
-  color: #e54a54;
+  color: #e61116;
 }
 
 .btn-main, .btn-main:visited {
-  background-color: #e54a54 !important;
+  background-color: #e61116 !important;
   border-color: #e54a54 !important;
   color: white;
 }
 .btn-main:hover, .btn-main:active {
-  background-color: #e54a54  !important;
+  background-color: #e61116  !important;
   border-color: #c13538 !important;
   color: white;
 }
