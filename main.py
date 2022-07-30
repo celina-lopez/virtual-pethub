@@ -39,6 +39,7 @@ async def upload(username, request: Request, theme: str = "normal"):
             "quote": data['quote'],
             "total_contributions": data['total_contributions'],
             "weeks": data["weeks"],
+            "colors": virtual_pet.get_color_theme(theme),
         })
    
 if __name__ == "__main__":

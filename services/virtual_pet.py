@@ -1,6 +1,36 @@
 import requests
-import os
-from dotenv import load_dotenv
+
+color_theme = {
+  "blue": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#c5cae9",
+    '#40c463': "#7986cb",
+    '#30a14e': "#3949ab",
+    '#216e39': "#1a237e",
+  },
+  "normal": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#6dc5fb",
+    '#40c463': "#f6f68c",
+    '#30a14e': "#8affa4",
+    '#216e39': "#f283d1",
+  },
+  "github":  {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#9be9a8",
+    '#40c463': "#40c463",
+    '#30a14e': "#30a14e",
+    '#216e39': "#216e39",
+  }
+}
+
+def get_color_theme(theme):
+  if theme == "blue" or theme == "normal":
+    return color_theme[theme]
+  else: 
+    return color_theme["github"]
+
+
 
 def points_to_pet(points):
   if points == 0:
@@ -28,8 +58,7 @@ def points_to_quote(points):
 
 
 def fetch_info(username):
-  # load_dotenv()
-  accessToken = "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"
+  accessToken = "ACCESS_TOKEN"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}

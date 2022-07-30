@@ -14,7 +14,7 @@
     <div id="pixel-art-area">
       {% for week in weeks %}
         {% for day in week['contributionDays'] %}
-          <div class="pixel" style="background-color:{{day['color']}};"></div>
+          <div class="pixel" style="background-color:{{colors[day['color']]}};"></div>
         {% endfor %}
       {% endfor %}
     </div>
