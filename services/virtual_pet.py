@@ -8,7 +8,7 @@ color_theme = {
     '#30a14e': "#3949ab",
     '#216e39': "#1a237e",
   },
-  "normal": {
+  "pink": {
     "#ebedf0": "#ebedf0",
     '#9be9a8': "#6dc5fb",
     '#40c463': "#f6f68c",
@@ -25,10 +25,17 @@ color_theme = {
 }
 
 def get_color_theme(theme):
-  if theme == "blue" or theme == "normal":
+  if theme in ["blue", "pink"]:
     return color_theme[theme]
   else: 
     return color_theme["github"]
+
+
+def get_theme(theme):
+  if theme in ["blue", "pink", "green"]:
+    return theme
+  else:
+    return "pink"
 
 
 
