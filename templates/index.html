@@ -28,7 +28,7 @@
 <script>
   $(function() {
     $("#submit").click(function() {
-      window.location.href = `/${$('#username').val()}?theme=${$('#theme').val()}`
+      window.location.href = `/${$('#username').val().toLowerCase()}?theme=${$('#theme').val()}`
     });
   });
 </script>
