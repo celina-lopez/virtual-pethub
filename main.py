@@ -1,7 +1,7 @@
 import os
 import mistune
 import uvicorn
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -41,6 +41,11 @@ async def upload(username, request: Request, theme: str = "pink"):
             "weeks": data["weeks"],
             "colors": virtual_pet.get_color_theme(theme),
         })
+
+@app.get("/{username}/{theme}.gif")
+def get_image(username, theme, request: Request):
+    data = virtual_pet.fetch_info(username)
+    return FileResponse("static/%s-%s.gif" % (data['mood'], virtual_pet.get_theme(theme)))
    
 if __name__ == "__main__":
     load_dotenv()
