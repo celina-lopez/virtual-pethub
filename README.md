@@ -16,9 +16,9 @@ Check it out below!
 
 | Theme             | Virtual Pet                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Pink | <img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100"> |
-| Green | <img src="https://www.virtual-pethub.com/celina-lopez/green.gif" height="100"> |
-| Blue | <img src="https://www.virtual-pethub.com/celina-lopez/blue.gif" height="100"> |
+| pink | <img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100"> |
+| green | <img src="https://www.virtual-pethub.com/celina-lopez/green.gif" height="100"> |
+| blue | <img src="https://www.virtual-pethub.com/celina-lopez/blue.gif" height="100"> |
 
 
 
