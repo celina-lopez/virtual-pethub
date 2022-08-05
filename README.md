@@ -1,9 +1,28 @@
 # Virtual PetHub
 virtual pet survives on your contributions!
 
-Checkout mine :) https://github-virtual-pet-nzcbpymxfq-uc.a.run.app/celina-lopez
+Checkout mine :) https://virtual-pethub.com/celina-lopez
 
 
 ## How to use
-`https://github-virtual-pet-nzcbpymxfq-uc.a.run.app/GITHUB_USERNAME`
+`<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100">`
 
+Check it out below!
+
+<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100">
+
+
+## Theme Reference
+
+| Theme             | Virtual Pet                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Pink | <img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100"> |
+| Green | <img src="https://www.virtual-pethub.com/celina-lopez/green.gif" height="100"> |
+| Blue | <img src="https://www.virtual-pethub.com/celina-lopez/blue.gif" height="100"> |
+
+
+
+### Todo 
+
+- [ ] image height for github
+- [ ] have recent contributions around image, or quote for github so they know what it is
