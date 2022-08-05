@@ -1,7 +1,7 @@
 # Virtual PetHub
 virtual pet survives on your contributions!
 
-Checkout mine :) https://virtual-pethub.com/celina-lopez
+Checkout mine :) https://www.virtual-pethub.com/celina-lopez
 
 
 ## How to use
