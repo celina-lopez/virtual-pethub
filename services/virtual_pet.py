@@ -15,28 +15,135 @@ color_theme = {
     '#30a14e': "#8affa4",
     '#216e39': "#f283d1",
   },
-  "github":  {
+  "github": {
     "#ebedf0": "#ebedf0",
     '#9be9a8': "#9be9a8",
     '#40c463': "#40c463",
     '#30a14e': "#30a14e",
     '#216e39': "#216e39",
-  }
+  },
+  "babyblue": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#b3e5fc",
+    '#40c463': "#4fc3f7",
+    '#30a14e': "#039be5",
+    '#216e39': "#01579b",
+  },
+  "comic": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#b3e5fc",
+    '#40c463': "#4fc3f7",
+    '#30a14e': "#039be5",
+    '#216e39': "#01579b",
+  },
+  "donut": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#6dc5fb",
+    '#40c463': "#f6f68c",
+    '#30a14e': "#8affa4",
+    '#216e39': "#f283d1",
+  },
+  "flower": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#fed800",
+    '#40c463': "#ff6f01",
+    '#30a14e': "#fd2f24",
+    '#216e39': "#811d5e",
+  },
+  "green": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#9be9a8",
+    '#40c463': "#40c463",
+    '#30a14e': "#30a14e",
+    '#216e39': "#216e39",
+  },
+  "love": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#ffcdd2",
+    '#40c463': "#e57373",
+    '#30a14e': "#e53935",
+    '#216e39': "#b71c1c",
+  },
+  "retro": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#6dc5fb",
+    '#40c463': "#f6f68c",
+    '#30a14e': "#8affa4",
+    '#216e39': "#f283d1",
+  },
+  "sparklegreen": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#f0f4c3",
+    '#40c463': "#dce775",
+    '#30a14e': "#c0ca33",
+    '#216e39': "#827717",
+  },
+  "sparklepink": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#6dc5fb",
+    '#40c463': "#f6f68c",
+    '#30a14e': "#8affa4",
+    '#216e39': "#f283d1",
+  },
+  "sparklered": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#ffcdd2",
+    '#40c463': "#e57373",
+    '#30a14e': "#e53935",
+    '#216e39': "#b71c1c",
+  },
+  "white": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#e0e0e0",
+    '#40c463': "#9e9e9e",
+    '#30a14e': "#616161",
+    '#216e39': "#212121",
+  },
+  "whitepink": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#ffcdd2",
+    '#40c463': "#e57373",
+    '#30a14e': "#e53935",
+    '#216e39': "#b71c1c",
+  },
+  "yellow": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#eae374",
+    '#40c463': "#f9d62e",
+    '#30a14e': "#fc913a",
+    '#216e39': "#ff4e50",
+  },
 }
+themes = [
+  "babyblue",
+  "blue",
+  "comic",
+  "donut",
+  "flower",
+  "green",
+  "love",
+  "pink",
+  "retro",
+  "sparklegreen",
+  "sparklepink",
+  "sparklered",
+  "white",
+  "whitepink",
+  "yellow",
+]
 
 def get_color_theme(theme):
-  if theme in ["blue", "pink"]:
+  if theme in themes:
     return color_theme[theme]
   else: 
     return color_theme["github"]
 
 
 def get_theme(theme):
-  if theme in ["blue", "pink", "green"]:
+  if theme in themes:
     return theme
   else:
     return "pink"
-
 
 
 def points_to_pet(points):
@@ -65,7 +172,7 @@ def points_to_quote(points):
 
 
 def fetch_info(username):
-  accessToken = "ACCESS_TOKEN"
+  accessToken = "Access Code"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
