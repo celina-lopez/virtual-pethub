@@ -172,7 +172,7 @@ def points_to_quote(points):
 
 
 def fetch_info(username):
-  accessToken = "ACCESSTOKEN"
+  accessToken = "hey"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
@@ -216,18 +216,43 @@ def fetch_info(username):
     "weeks": data['contributionsCollection']['contributionCalendar']['weeks'],
   }
 
-def generate_svg(args):
-  return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" fill="none" role="img" aria-labelledby="descId">
+
+def generate_header(default_color, username):
+  return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="90" fill="none" role="img" aria-labelledby="descId">
         <style>
           .header {{
             font: 600 18px "Courier New", Courier, monospace,  Ubuntu, "Helvetica Neue", Sans-Serif;
-            fill: {default_color};
+            fill: {0};
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }}
           @supports(-moz-appearance: auto) {{
             /* Selector detects Firefox */
             .header {{ font-size: 15.5px; }}
           }}
+          /* Animations */
+          @keyframes fadeInAnimation {{
+            from {{
+              opacity: 0;
+            }}
+            to {{
+              opacity: 1;
+            }}
+          }}
+        </style>
+        <g data-testid="card-title" transform="translate(0, 35)">
+          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" data-testid="header">{1}'s</text>
+        </g>
+        <g data-testid="card-title" transform="translate(0, 55)">
+          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" >Virtual Pet</text>
+        </g>
+      </svg>
+    """.format(default_color, username)
+
+
+
+def generate_contribution_count(total_contributions):
+  return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="30" fill="none" role="img" aria-labelledby="descId">
+        <style>
           .stat {{
             font: 600 14px "Courier New", Courier, monospace, Ubuntu, "Helvetica Neue", Sans-Serif; fill: #434d58;
           }}
@@ -251,20 +276,9 @@ def generate_svg(args):
             }}
           }}
         </style>
-        <g data-testid="card-title" transform="translate(0, 35)">
-          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" data-testid="header">{username}'s</text>
-        </g>
-        <g data-testid="card-title" transform="translate(0, 55)">
-          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" >Virtual Pet</text>
-        </g>
-        <g data-testid="main-card-body" transform="translate(0, 75)">
-          <g transform="translate(80, 0)">
-            <image href="https://www.virtual-pethub.com/static/{mood}-{theme}.gif" width="140" />
-          </g>
-          <g class="stagger" style="animation-delay: 450ms" transform="translate(0, 205)">
-            <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{total_contributions} recent contributions</text>
-          </g>
+        <g class="stagger" style="animation-delay: 450ms">
+          <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{0} recent contributions</text>
         </g>
       </svg>
-    """.format(**args)
+    """.format(total_contributions)
 

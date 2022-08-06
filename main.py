@@ -42,18 +42,25 @@ async def upload(username, request: Request, theme: str = "pink"):
             "colors": virtual_pet.get_color_theme(theme),
         })
 
-@app.get("/{username}/{theme}.svg")
-def get_image(username, theme, request: Request):
-    data = virtual_pet.fetch_info(username)
-    args = {
-      'default_color': virtual_pet.get_color_theme(theme)["#216e39"],
-      'username': username,
-      'mood': data['mood'],
-      'theme': virtual_pet.get_theme(theme),
-      'total_contributions': data['total_contributions'],
-    }
-    return Response(content=virtual_pet.generate_svg(args), media_type="image/svg+xml")
+@app.get("/{username}/{theme}.gif")
+def get_image(username, theme):
+  data = virtual_pet.fetch_info(username)
+  return FileResponse("static/%s-%s.gif" % (data['mood'], virtual_pet.get_theme(theme)))
 
+
+@app.get("/{username}/{theme}/header.svg")
+def get_image(username, theme):
+  content = virtual_pet.generate_header(virtual_pet.get_color_theme(theme)["#216e39"], username)
+  return Response(content=content, media_type="image/svg+xml")
+
+@app.get("/{username}/contributions.svg")
+def get_image(username):
+  data = virtual_pet.fetch_info(username)
+  content = virtual_pet.generate_contribution_count(data['total_contributions'])
+  return Response(content=content, media_type="image/svg+xml")
+
+
+   
 if __name__ == "__main__":
     load_dotenv()
     uvicorn.run(app, host="0.0.0.0", port=int(os.getenv('PORT', "8000")))
