@@ -1,0 +1,49 @@
+  <svg xmlns="http://www.w3.org/2000/svg" width="300" viewBox="0 0 300 300" fill="none" role="img" aria-labelledby="descId">
+    <style>
+      .header {
+        font: 600 18px "Courier New", Courier, monospace,  Ubuntu, "Helvetica Neue", Sans-Serif;
+        fill: {{colors["#216e39"]}};
+        animation: fadeInAnimation 0.8s ease-in-out forwards;
+      }
+      @supports(-moz-appearance: auto) {
+        /* Selector detects Firefox */
+        .header { font-size: 15.5px; }
+      }
+      .stat {
+        font: 600 14px "Courier New", Courier, monospace, Ubuntu, "Helvetica Neue", Sans-Serif; fill: #434d58;
+      }
+    
+      @supports(-moz-appearance: auto) {
+      /* Selector detects Firefox */
+        .stat { font-size:12px; }
+      }
+      .stagger {
+        opacity: 0;
+        animation: fadeInAnimation 0.3s ease-in-out forwards;
+      }
+      .bold { font-weight: 700 }
+      /* Animations */
+      @keyframes fadeInAnimation {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+    <g data-testid="card-title" transform="translate(0, 35)">
+      <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" data-testid="header">{{ username }}'s</text>
+    </g>
+    <g data-testid="card-title" transform="translate(0, 55)">
+      <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" >Virtual Pet</text>
+    </g>
+    <g data-testid="main-card-body" transform="translate(0, 75)">
+      <g transform="translate(80, 0)">
+        <image href="https://www.virtual-pethub.com/static/{{ mood }}-{{ theme }}.gif" width="140" />
+      </g>
+      <g class="stagger" style="animation-delay: 450ms" transform="translate(0, 205)">
+        <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{{ total_contributions }} recent contributions</text>
+      </g>
+    </g>
+  </svg>
