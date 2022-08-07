@@ -13,12 +13,10 @@ Checkout mine :)
   <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg"/>
 </div>
 
-## 📝 Table of Contents
+## Table of Contents
 - [Getting Started](#how_to_use)
 - [How to keep your pet alive](#rules)
 - [Theme Reference](#theme)
-- [TODO](../TODO.md)
-- [Authors](#authors)
 
 
 ## Getting Started <a name = "how_to_use"></a>
