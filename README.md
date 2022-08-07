@@ -1,18 +1,45 @@
 # Virtual PetHub
 virtual pet survives on your contributions!
 
-Checkout mine :) https://www.virtual-pethub.com/celina-lopez
+Checkout mine :)
+
+<div align="center">
+  <img src="https://www.virtual-pethub.com/celina-lopez/sparklepink/header.svg"/>
+</div>
+<div align="center">
+<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="200">
+</div>
+<div align="center">
+  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg"/>
+</div>
+
+## 📝 Table of Contents
+- [Getting Started](#how_to_use)
+- [How to keep your pet alive](#rules)
+- [Theme Reference](#theme)
+- [TODO](../TODO.md)
+- [Authors](#authors)
 
 
-## How to use
-`<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100">`
+## Getting Started <a name = "how_to_use"></a>
 
-Check it out below!
+1. Go to www.virtualpethub.com and entery your github username
+2. copy the code (sample below)
+3. paste on your readme!
 
-<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100">
+```
+<div align="center">
+  <img src="https://www.virtual-pethub.com/celina-lopez/sparklepink/header.svg"/>
+</div>
+<div align="center">
+<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="200">
+</div>
+<div align="center">
+  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg"/>
+</div>
+```
 
-
-## The Rules
+## How to keep your pet alive <a name = "rules"></a>
 
 Your pet survives based on your commits, so keep submitting those pull requests! 
 
@@ -29,8 +56,7 @@ Contributed at least once for the past 7 days?
 <img src="https://www.virtual-pethub.com/static/dancing-retro.gif" height="200">
 
 
-
-## Theme Reference
+## Theme Reference <a name = "theme"></a>
 
 | Theme             | Virtual Pet                                                                |
 | ----------------- | ------------------------------------------------------------------ |
@@ -51,7 +77,8 @@ Contributed at least once for the past 7 days?
 | yellow | <img src="https://www.virtual-pethub.com/static/sleep-yellow.gif" height="200"> |
 
 
-### Todo 
+### Todo <a name = "future"></a>
 
 - [ ] image height for github
-- [ ] have recent contributions around image, or quote for github so they know what it is
+- [ ] copy and paste area on app
+- [ ] theme gallery on app
