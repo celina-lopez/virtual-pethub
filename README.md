@@ -1,8 +1,19 @@
 # Virtual PetHub
 virtual pet survives on your contributions!
 
-Checkout mine :) https://www.virtual-pethub.com/celina-lopez
+create your own: https://www.virtual-pethub.com/
 
+Checkout mine :)
+
+<div align="center">
+  <img src="https://www.virtual-pethub.com/celina-lopez/sparklepink/header.svg"/>
+</div>
+<div align="center">
+<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="200">
+</div>
+<div align="center">
+  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg"/>
+</div>
 
 ## How to use
 `<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="100">`
