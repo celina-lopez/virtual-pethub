@@ -172,7 +172,7 @@ def points_to_quote(points):
 
 
 def fetch_info(username):
-  accessToken = "hey"
+  accessToken = "no"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
@@ -218,7 +218,7 @@ def fetch_info(username):
 
 
 def generate_header(default_color, username):
-  return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="90" fill="none" role="img" aria-labelledby="descId">
+  return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="70" fill="none" role="img" aria-labelledby="descId">
         <style>
           .header {{
             font: 600 18px "Courier New", Courier, monospace,  Ubuntu, "Helvetica Neue", Sans-Serif;
@@ -239,10 +239,10 @@ def generate_header(default_color, username):
             }}
           }}
         </style>
-        <g data-testid="card-title" transform="translate(0, 35)">
+        <g data-testid="card-title" transform="translate(0, 15)">
           <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" data-testid="header">{1}'s</text>
         </g>
-        <g data-testid="card-title" transform="translate(0, 55)">
+        <g data-testid="card-title" transform="translate(0, 35)">
           <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" >Virtual Pet</text>
         </g>
       </svg>
