@@ -70,3 +70,39 @@ body {
   -moz-appearance: none;
   appearance: none;
 }
+
+code {
+  padding: 2px 4px;
+  font-size: 85%;
+  color: #d44950;
+  background-color: #f7f7f9;
+  border-radius: .2rem;
+}
+
+pre {
+  padding: 0px 20px;
+  border-radius: 5px;
+  text-align: start;
+  display: block;
+  margin: 0 0 1rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+pre code {
+  padding: 0px;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+
+.nt {
+  color: #2f6f9f;
+}
+
+.na {
+  color: #4f9fcf
+}
+.s {
+  color: #d44950
+}
