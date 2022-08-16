@@ -4,21 +4,21 @@ virtual pet survives on your contributions!
 Checkout mine :)
 
 <div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/sparklepink/header.svg"/>
+  <img src="https://www.virtual-pethub.com/celina-lopez/pink/header.svg?"/>
 </div>
 <div align="center">
-<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="200">
+<div align="center">
+  <img src="https://www.virtual-pethub.com/celina-lopez/pink.gif?" height="200" />
+</div>
 </div>
 <div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg"/>
+  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg?"/>
 </div>
 
-## 📝 Table of Contents
+## Table of Contents
 - [Getting Started](#how_to_use)
 - [How to keep your pet alive](#rules)
 - [Theme Reference](#theme)
-- [TODO](../TODO.md)
-- [Authors](#authors)
 
 
 ## Getting Started <a name = "how_to_use"></a>
