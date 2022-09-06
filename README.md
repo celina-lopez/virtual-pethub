@@ -83,7 +83,7 @@ Contributed at least once for the past 7 days?
 | love | <img src="https://www.virtual-pethub.com/static/ripputchi/dancing-love.gif" height="200"> |
 | mermaid | <img src="https://www.virtual-pethub.com/static/kurupoyotchi_pink/dancing-mermaid.gif" height="200"> |
 | pink | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/freak-pink.gif" height="200"> |
-| rainbow | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/whine-retro.gif" height="200"> |
+| rainbow | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/whine-rainbow.gif" height="200"> |
 | sparklegreen | <img src="https://www.virtual-pethub.com/static/kurupoyotchi_blue/sleep-sparklegreen.gif" height="200"> |
 | sparklepink | <img src="https://www.virtual-pethub.com/static/ripputchi/happy-sparklepink.gif" height="200"> |
 | sparklered | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/dancing-sparklered.gif" height="200"> |
@@ -96,5 +96,4 @@ Contributed at least once for the past 7 days?
 
 - [ ] image height for github
 - [ ] copy and paste area on app
-- [ ] theme gallery on app
 - [ ] updated tombstone

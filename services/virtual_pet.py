@@ -215,7 +215,7 @@ def points_to_quote(points):
     return "keep up the good work!"
 
 def fetch_info(username):
-  accessToken = "access-token"
+  accessToken = "access_token"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
