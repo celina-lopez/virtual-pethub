@@ -51,7 +51,7 @@ No contributions this week?
 <img src="https://www.virtual-pethub.com/static/dead-love.gif" height="200">
 
 
-Contributed at least once for the past 7 days? 
+If you are active, your pet would love it! 
 
 <img src="https://www.virtual-pethub.com/static/ripputchi/dancing-retro.gif" height="200">
 
