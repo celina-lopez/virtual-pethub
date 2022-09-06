@@ -96,4 +96,3 @@ Contributed at least once for the past 7 days?
 
 - [ ] image height for github
 - [ ] copy and paste area on app
-- [ ] updated tombstone
