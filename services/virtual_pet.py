@@ -215,7 +215,7 @@ def points_to_quote(points):
     return "keep up the good work!"
 
 def fetch_info(username):
-  accessToken = "access_token"
+  accessToken = "at"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
@@ -328,6 +328,6 @@ def generate_contribution_count(total_contributions):
 def generate_file_response(pet, username, theme):
   mood = fetch_info(username)["mood"]
   if mood == "dead":
-    return "static/%s_%s.gif" % (mood, get_theme(theme))
+    return "static/%s-%s.gif" % (mood, get_theme(theme))
   else:
     return "static/%s/%s-%s.gif" % (get_pet(pet), mood, get_theme(theme))

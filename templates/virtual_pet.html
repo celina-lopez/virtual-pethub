@@ -44,8 +44,12 @@
     </g>
     <g data-testid="main-card-body" transform="translate(0, 75)">
       <g transform="translate(80, 0)">
-        <image href="https://www.virtual-pethub.com/static/{{ pet }}/{{ mood }}-{{ theme }}.gif" width="140" />
-      </g>
+        {% if mood == "dead" %}
+          <image href="https://www.virtual-pethub.com/static/{{ mood }}-{{ theme }}.gif" width="140" />
+        {% else %}
+          <image href="https://www.virtual-pethub.com/static/{{ pet }}/{{ mood }}-{{ theme }}.gif" width="140" />
+        {% endif %}
+        </g>
       <g class="stagger" style="animation-delay: 450ms" transform="translate(0, 205)">
         <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{{ total_contributions }} recent contributions</text>
       </g>
