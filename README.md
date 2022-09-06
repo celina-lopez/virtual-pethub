@@ -8,7 +8,7 @@ Checkout mine :)
 </div>
 <div align="center">
 <div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/ripputchi/pink.gif?" height="200" />
+  <img src="https://www.virtual-pethub.com/celina-lopez/hanbunkotchi/pink.gif?" height="200" />
 </div>
 </div>
 <div align="center">
@@ -32,7 +32,7 @@ Checkout mine :)
   <img src="https://www.virtual-pethub.com/celina-lopez/sparklepink/header.svg"/>
 </div>
 <div align="center">
-<img src="https://www.virtual-pethub.com/celina-lopez/pink.gif" height="200">
+<img src="https://www.virtual-pethub.com/ripputchi/celina-lopez/pink.gif" height="200">
 </div>
 <div align="center">
   <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg"/>
