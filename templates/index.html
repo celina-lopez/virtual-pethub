@@ -14,49 +14,64 @@
     <i>A virtual pet based on your contributions</i>
   </div>
 
-  <label class="mr-sm-2" for="username">Username</label>
+  <h3 class="mt-4">First, enter your github username</h3>
   <input type="text" class="form-control form-control-lg" placeholder="Github username" name="username" id="username">
-  <label class="mr-sm-2 mt-2" for="theme">Pet</label>
-  <select class="form-control form-control-lg mr-sm-2" name="pet" id="pet">
-    <option selected value="{{ pets[0] }}">{{ pets[0] }}</option>
-    {% for pet in pets[1:] %}
-      <option value="{{ pet }}">{{ pet }}</option>
-    {% endfor %}
-  </select>
-  <label class="mr-sm-2 mt-2" for="theme">Theme</label>
-  <select class="form-control form-control-lg mr-sm-2" name="theme" id="theme">
-    <option selected value="pink">pink</option>
-    {% for theme in themes.keys() %}
-      {% if theme != "pink" %}
-      <option value="{{ theme }}">{{ themes[theme] }}</option>
-      {% endif %}
-    {% endfor %}
-  </select>
-  
-  <button class="btn btn-main w-100 btn-lg mt-3" id="submit">Submit</button>
+  <input type="hidden" id="pet" name="pet" value="{{ pets[0] }}" />
+  <input type="hidden" id="theme" name="theme" value="pink" />
 
-
-  <h3 class="mt-4">Pets</h3>
+  <h3 class="mt-4">Choose a pet!</h3>
   <div class="row">
     {% for pet in pets %}
-      <div class="col-3 my-1 text-center">
-        <img src="https://www.virtual-pethub.com/static/{{ pet }}/dancing-rainbow.gif" height="100" />
+      <div class="col-4 my-2 text-center pet" data-pet="{{ pet }}">
+        <img src="https://www.virtual-pethub.com/static/{{ pet }}/dancing-rainbow.gif" height="200" />
         <div>{{ pet }}</div>
       </div>
     {% endfor %}
   </div>
 
-  <h3 class="mt-4">Themes</h3>
-  <div class="row">
+  <h3 class="mt-4">Now a device :D</h3>
+  <div class="row mb-2">
     {% for theme in themes.keys() %}
-      <div class="col-3 my-1 text-center">
-        <img src="https://www.virtual-pethub.com/static/{{ random_pet }}/dancing-{{ theme }}.gif" height="100" />
+      <div class="col-4 my-2 text-center theme" data-theme="{{ theme }}">
+        <img
+          class="pet-pic"
+          src="https://www.virtual-pethub.com/static/{{ pets[0] }}/dancing-{{ theme }}.gif"
+          height="200"
+          data-theme="{{ theme }}"
+        />
         <div>{{ theme }}</div>
       </div>
     {% endfor %}
   </div>
+  <button class="btn btn-main w-100 btn-lg mt-3" id="submit">Submit</button>
+
+
 </div>
 <script>
+
+  function handleSelect(name, thiz) {
+    const value = $(thiz).data(name);
+    $('#' + name).val(value);
+    $("." + name).each(function(){
+      $(this).removeClass("active")
+    })
+    $(thiz).addClass("active");
+  } 
+
+  $('.pet').click(function() {
+    handleSelect("pet", this)
+    const val = $("#pet").val()
+    $(".pet-pic").each(function(){
+      $(this).attr("src", "https://www.virtual-pethub.com/static/" + val  + "/dancing-"+ $(this).data("theme") + ".gif")
+    })
+  });
+
+  $('.theme').click(function() {
+    handleSelect("theme", this)
+  });
+
+
+
   $(function() {
     $("#submit").click(function() {
       window.location.href = `/${$('#username').val().toLowerCase()}?theme=${$('#theme').val()}&pet=${$("#pet").val()}`

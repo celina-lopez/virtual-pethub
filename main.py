@@ -26,7 +26,6 @@ async def index(request: Request):
             "readme": mistune.html(readme_content),
             "themes": virtual_pet.display_themes,
             "pets": virtual_pet.pets,
-            "random_pet": virtual_pet.pets[random.randint(0, len(virtual_pet.pets))],
         })
 
 

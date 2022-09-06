@@ -106,3 +106,8 @@ pre code {
 .s {
   color: #d44950
 }
+
+.pet.active, .theme.active {
+  border: 1px solid #520083;
+  border-radius: 20px;
+}
