@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<div class="container text-center py-5 mb-3" x-data="{}">
+<div class="container text-center mb-3">
   <svg xmlns="http://www.w3.org/2000/svg" width="300" viewBox="0 0 300 300" fill="none" role="img" aria-labelledby="descId">
     <style>
       .header {
@@ -44,7 +44,7 @@
     </g>
     <g data-testid="main-card-body" transform="translate(0, 75)">
       <g transform="translate(80, 0)">
-        <image href="https://www.virtual-pethub.com/static/{{ mood }}-{{ theme }}.gif" width="140" />
+        <image href="https://www.virtual-pethub.com/static/{{ pet }}/{{ mood }}-{{ theme }}.gif" width="140" />
       </g>
       <g class="stagger" style="animation-delay: 450ms" transform="translate(0, 205)">
         <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{{ total_contributions }} recent contributions</text>

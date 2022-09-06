@@ -8,6 +8,7 @@ from fastapi.templating import Jinja2Templates
 from dotenv import load_dotenv
 import os
 from services import virtual_pet
+import random
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -22,12 +23,15 @@ async def index(request: Request):
         readme_content = readme.read()
         return templates.TemplateResponse("index.html", {
             "request": request,
-            "readme": mistune.html(readme_content)
+            "readme": mistune.html(readme_content),
+            "themes": virtual_pet.display_themes,
+            "pets": virtual_pet.pets,
+            "random_pet": virtual_pet.pets[random.randint(0, len(virtual_pet.pets))],
         })
 
 
 @app.get("/{username}")
-async def upload(username, request: Request, theme: str = "pink"):
+async def upload(username, request: Request, theme: str = "pink", pet: str = "hanbunkotchi"):
   load_dotenv()
   data = virtual_pet.fetch_info(username)
 
@@ -35,6 +39,7 @@ async def upload(username, request: Request, theme: str = "pink"):
             "request": request,
             "mood": data['mood'],
             "theme": virtual_pet.get_theme(theme),
+            "pet": virtual_pet.get_pet(pet),
             "username": username,
             "quote": data['quote'],
             "total_contributions": data['total_contributions'],
@@ -42,10 +47,10 @@ async def upload(username, request: Request, theme: str = "pink"):
             "colors": virtual_pet.get_color_theme(theme),
         })
 
-@app.get("/{username}/{theme}.gif")
-def get_image(username, theme):
-  data = virtual_pet.fetch_info(username)
-  return FileResponse("static/%s-%s.gif" % (data['mood'], virtual_pet.get_theme(theme)))
+@app.get("/{username}/{pet}/{theme}.gif")
+def get_image(username, pet, theme):
+  gif = virtual_pet.generate_file_response(pet, username, theme)
+  return FileResponse(gif)
 
 
 @app.get("/{username}/{theme}/header.svg")

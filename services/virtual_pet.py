@@ -1,5 +1,7 @@
 import requests
 
+# TODO: average commits per week github 
+
 color_theme = {
   "blue": {
     "#ebedf0": "#ebedf0",
@@ -7,6 +9,20 @@ color_theme = {
     '#40c463': "#7986cb",
     '#30a14e': "#3949ab",
     '#216e39': "#1a237e",
+  },
+  "black": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#c5cae9",
+    '#40c463': "#7986cb",
+    '#30a14e': "#3949ab",
+    '#216e39': "#1a237e",
+  },
+  "mermaid": {
+    "#ebedf0": "#ebedf0",
+    '#9be9a8': "#6dc5fb",
+    '#40c463': "#f6f68c",
+    '#30a14e': "#8affa4",
+    '#216e39': "#f283d1",
   },
   "pink": {
     "#ebedf0": "#ebedf0",
@@ -64,13 +80,20 @@ color_theme = {
     '#30a14e': "#e53935",
     '#216e39': "#b71c1c",
   },
-  "retro": {
+  "rainbow": {
     "#ebedf0": "#ebedf0",
     '#9be9a8': "#6dc5fb",
     '#40c463': "#f6f68c",
     '#30a14e': "#8affa4",
     '#216e39': "#f283d1",
   },
+  # "retro": {
+  #   "#ebedf0": "#ebedf0",
+  #   '#9be9a8': "#6dc5fb",
+  #   '#40c463': "#f6f68c",
+  #   '#30a14e': "#8affa4",
+  #   '#216e39': "#f283d1",
+  # },
   "sparklegreen": {
     "#ebedf0": "#ebedf0",
     '#9be9a8': "#f0f4c3",
@@ -114,23 +137,46 @@ color_theme = {
     '#216e39': "#ff4e50",
   },
 }
-themes = [
-  "babyblue",
-  "blue",
-  "comic",
-  "donut",
-  "flower",
-  "green",
-  "love",
-  "pink",
-  "retro",
-  "sparklegreen",
-  "sparklepink",
-  "sparklered",
-  "white",
-  "whitepink",
-  "yellow",
+
+themes = color_theme.keys()
+
+display_themes = {
+  "babyblue": "baby blue",
+  "black": "black",
+  "blue" : "blue",
+  "comic": "comic",
+  "donut": "donut",
+  "flower": "flower",
+  "green": "green",
+  "love": "love",
+  "mermaid": "mermaid",
+  "pink": "pink",
+  "rainbow": "rainbow",
+  # "retro": "retro",
+  "sparklegreen": "sparkley green",
+  "sparklepink": "sparkley pink",
+  "sparklered": "sparkley red",
+  "white": "white",
+  "whitepink": "white pink",
+  "yellow": "yellow",
+}
+
+pets = [
+  # "mametchi",
+  "kurupoyotchi",
+  "kurupoyotchi_pink",
+  "kurupoyotchi_blue",
+  "hanbunkotchi",
+  "mokumokutchi",
+  "ripputchi",
+  "yumehotchi",
 ]
+
+def get_pet(pet):
+  if pet in pets:
+    return pet
+  else: 
+    return pets[0]
 
 def get_color_theme(theme):
   if theme in themes:
@@ -138,13 +184,11 @@ def get_color_theme(theme):
   else: 
     return color_theme["github"]
 
-
 def get_theme(theme):
   if theme in themes:
     return theme
   else:
     return "pink"
-
 
 def points_to_pet(points):
   if points == 0:
@@ -170,9 +214,8 @@ def points_to_quote(points):
   else:
     return "keep up the good work!"
 
-
 def fetch_info(username):
-  accessToken = "bruv"
+  accessToken = "ACCESS_TOKEN"
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
@@ -215,7 +258,6 @@ def fetch_info(username):
     "quote": points_to_quote(points),
     "weeks": data['contributionsCollection']['contributionCalendar']['weeks'],
   }
-
 
 def generate_header(default_color, username):
   return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="50" fill="none" role="img" aria-labelledby="descId">
@@ -282,3 +324,10 @@ def generate_contribution_count(total_contributions):
       </svg>
     """.format(total_contributions)
 
+
+def generate_file_response(pet, username, theme):
+  mood = fetch_info(username)["mood"]
+  if mood == "dead":
+    return "static/mametchi/%s-%s.gif" % (mood, get_theme(theme))
+  else:
+    return "static/%s/%s-%s.gif" % (get_pet(pet), mood, get_theme(theme))

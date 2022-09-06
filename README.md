@@ -48,33 +48,48 @@ This is based on the last 7 days (not including today).
 No contributions this week?
 
 
-<img src="https://www.virtual-pethub.com/static/dead-love.gif" height="200">
+<img src="https://www.virtual-pethub.com/static/mametchi/dead-love.gif" height="200">
 
 
 Contributed at least once for the past 7 days? 
 
-<img src="https://www.virtual-pethub.com/static/dancing-retro.gif" height="200">
+<img src="https://www.virtual-pethub.com/static/ripputchi/dancing-retro.gif" height="200">
 
 
 ## Theme Reference <a name = "theme"></a>
 
+
+| Pets             | Virtual Pet                                                   |
+| ----------------- | ------------------------------------------------------------------ |
+| kurupoyotchi | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/dancing-blue.gif" height="200"> |
+| hanbunkotchi | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/freak-comic.gif" height="200"> |
+| mokumokutchi | <img src="https://www.virtual-pethub.com/static/mokumokutchi/whine-donut.gif" height="200"> |
+| ripputchi | <img src="https://www.virtual-pethub.com/static/ripputchi/whine-donut.gif" height="200"> |
+| yumehotchi | <img src="https://www.virtual-pethub.com/static/yumehotchi/whine-donut.gif" height="200"> |
+| kurupoyotchi blue | <img src="https://www.virtual-pethub.com/static/kurupoyotchi_blue/dancing-blue.gif" height="200"> |
+| kurupoyotchi pink | <img src="https://www.virtual-pethub.com/static/kurupoyotchi_pink/dancing-blue.gif" height="200"> |
+
+
+
 | Theme             | Virtual Pet                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| babyblue | <img src="https://www.virtual-pethub.com/static/happy-babyblue.gif" height="200"> |
-| blue | <img src="https://www.virtual-pethub.com/static/dancing-blue.gif" height="200"> |
-| comic | <img src="https://www.virtual-pethub.com/static/freak-comic.gif" height="200"> |
-| donut | <img src="https://www.virtual-pethub.com/static/whine-donut.gif" height="200"> |
-| flower | <img src="https://www.virtual-pethub.com/static/sleep-flower.gif" height="200"> |
-| green | <img src="https://www.virtual-pethub.com/static/happy-green.gif" height="200"> |
-| love | <img src="https://www.virtual-pethub.com/static/dancing-love.gif" height="200"> |
-| pink | <img src="https://www.virtual-pethub.com/static/freak-pink.gif" height="200"> |
-| retro | <img src="https://www.virtual-pethub.com/static/whine-retro.gif" height="200"> |
-| sparklegreen | <img src="https://www.virtual-pethub.com/static/sleep-sparklegreen.gif" height="200"> |
-| sparklepink | <img src="https://www.virtual-pethub.com/static/happy-sparklepink.gif" height="200"> |
-| sparklered | <img src="https://www.virtual-pethub.com/static/dancing-sparklered.gif" height="200"> |
-| white | <img src="https://www.virtual-pethub.com/static/dead-white.gif" height="200"> |
-| whitepink | <img src="https://www.virtual-pethub.com/static/whine-whitepink.gif" height="200"> |
-| yellow | <img src="https://www.virtual-pethub.com/static/sleep-yellow.gif" height="200"> |
+| babyblue | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/happy-babyblue.gif" height="200"> |
+| black | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/happy-babyblue.gif" height="200"> |
+| blue | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/dancing-blue.gif" height="200"> |
+| comic | <img src="https://www.virtual-pethub.com/static/mokumokutchi/freak-comic.gif" height="200"> |
+| donut | <img src="https://www.virtual-pethub.com/static/ripputchi/whine-donut.gif" height="200"> |
+| flower | <img src="https://www.virtual-pethub.com/static/kurupoyotchi_pink/sleep-flower.gif" height="200"> |
+| green | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/happy-green.gif" height="200"> |
+| love | <img src="https://www.virtual-pethub.com/static/ripputchi/dancing-love.gif" height="200"> |
+| mermaid | <img src="https://www.virtual-pethub.com/static/kurupoyotchi_pink/dancing-mermaid.gif" height="200"> |
+| pink | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/freak-pink.gif" height="200"> |
+| rainbow | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/whine-retro.gif" height="200"> |
+| sparklegreen | <img src="https://www.virtual-pethub.com/static/kurupoyotchi_blue/sleep-sparklegreen.gif" height="200"> |
+| sparklepink | <img src="https://www.virtual-pethub.com/static/ripputchi/happy-sparklepink.gif" height="200"> |
+| sparklered | <img src="https://www.virtual-pethub.com/static/kurupoyotchi/dancing-sparklered.gif" height="200"> |
+| white | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/dead-white.gif" height="200"> |
+| whitepink | <img src="https://www.virtual-pethub.com/static/mokumokutchi/whine-whitepink.gif" height="200"> |
+| yellow | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/sleep-yellow.gif" height="200"> |
 
 
 ### Todo <a name = "future"></a>
@@ -82,3 +97,4 @@ Contributed at least once for the past 7 days?
 - [ ] image height for github
 - [ ] copy and paste area on app
 - [ ] theme gallery on app
+- [ ] updated tombstone

@@ -1,4 +1,5 @@
 # DONT REMOVE THESE 2 LINES OR ELSE YOUR SECRETS WILL BE EXPOSED
+fix_tamagotchi_photos.py
 credentials/
 .env
 
