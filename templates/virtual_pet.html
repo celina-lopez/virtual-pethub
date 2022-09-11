@@ -68,24 +68,53 @@
   </div>
 
   <div>Copy and add to your README!</div>
-  <pre style="background-color:{{colors["#9be9a8"]}}80;">
-    <code data-lang="html">
-      <span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.virtual-pethub.com/{{username}}/{{theme}}/header.svg?&quot;</span> <span class="na">alt=</span><span class="s">&quot;virtual pethub header&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.virtual-pethub.com/{{username}}/{{theme}}.gif?&quot;</span> <span class="na">height=</span><span class="s">&quot;200&quot;</span> <span class="na">alt=</span><span class="s">&quot;virtual pethub subtitle&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.virtual-pethub.com/{{username}}/contributions.svg?&quot;</span> <span class="na">alt=</span><span class="s">&quot;virtual pethub subtitle&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div&gt;</span>
-   </code>
-  </pre>
+  <div style="position:relative">
+    <pre style="background-color:{{colors["#9be9a8"]}}80;">
+      <code data-lang="html">
+        <span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.virtual-pethub.com/{{username}}/{{theme}}/header.svg?&quot;</span> <span class="na">alt=</span><span class="s">&quot;virtual pethub header&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.virtual-pethub.com/{{pet}}/{{username}}/{{theme}}.gif?&quot;</span> <span class="na">height=</span><span class="s">&quot;200&quot;</span> <span class="na">alt=</span><span class="s">&quot;virtual pethub subtitle&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;https://www.virtual-pethub.com/{{username}}/contributions.svg?&quot;</span> <span class="na">alt=</span><span class="s">&quot;virtual pethub subtitle&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+    </code>
+    </pre>
+    <div id="copyToClipboard" class="clipboard icon" style="--clipboardcolor:{{colors["#216e39"]}}"><img src="https://www.virtual-pethub.com/static/clipboard-regular.svg"/></div>
+  </div>
 
+  <div class="d-none" id="copy-text">
+    <div align="center">
+      <img src="https://www.virtual-pethub.com/{{username}}/{{theme}}/header.svg?"/>
+    </div>
+    <div align="center">
+    <div align="center">
+      <img src="https://www.virtual-pethub.com/{{pet}}/{{username}}/{{theme}}.gif?" height="200" />
+    </div>
+    </div>
+    <div align="center">
+      <img src="https://www.virtual-pethub.com/{{username}}/contributions.svg?"/>
+    </div>
+  </div>
 
   
 </div>
 
+<script>
+  document.getElementById('copyToClipboard').addEventListener('click', function() {
+    function listener(e) {
+      e.clipboardData.setData("text/html", document.getElementById('copy-text').innerHTML);
+      e.clipboardData.setData("text/plain", document.getElementById('copy-text').innerHTML);
+      e.preventDefault();
+    }
+    document.addEventListener("copy", listener);
+    document.execCommand("copy");
+    document.removeEventListener("copy", listener);
+  })
+
+</script>
 
 
 {% endblock %}

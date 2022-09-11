@@ -111,3 +111,20 @@ pre code {
   border: 1px solid #520083;
   border-radius: 20px;
 }
+
+
+.clipboard.icon {
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  margin-top: 4px;
+  margin-left: 4px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.clipboard img {
+  padding: 5px 9px 5px 9px;
+  border: 1px solid var(--clipboardcolor, brown);
+  border-radius: 6px;
+}

@@ -19,7 +19,7 @@
   <input type="hidden" id="pet" name="pet" value="{{ pets[0] }}" />
   <input type="hidden" id="theme" name="theme" value="pink" />
 
-  <h3 class="mt-4">Choose a pet!</h3>
+  <h3 class="mt-4">Choose a pet</h3>
   <div class="row">
     {% for pet in pets %}
       <div class="col-4 my-2 text-center pet" data-pet="{{ pet }}">
@@ -29,7 +29,7 @@
     {% endfor %}
   </div>
 
-  <h3 class="mt-4">Now a device :D</h3>
+  <h3 class="mt-4">Now a device</h3>
   <div class="row mb-2">
     {% for theme in themes.keys() %}
       <div class="col-4 my-2 text-center theme" data-theme="{{ theme }}">
@@ -43,7 +43,7 @@
       </div>
     {% endfor %}
   </div>
-  <button class="btn btn-main w-100 btn-lg mt-3" id="submit">Create!</button>
+  <button class="btn btn-main w-100 btn-lg mt-3" id="submit">Create</button>
 
 
 </div>
