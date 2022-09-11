@@ -88,3 +88,9 @@ If you are active, your pet would love it!
 | white | <img src="https://www.virtual-pethub.com/static/dead_white.gif" height="200"> |
 | whitepink | <img src="https://www.virtual-pethub.com/static/mokumokutchi/whine-whitepink.gif" height="200"> |
 | yellow | <img src="https://www.virtual-pethub.com/static/hanbunkotchi/sleep-yellow.gif" height="200"> |
+
+
+### Todo <a name = "future"></a>
+
+- [ ] hover over contributions
+- [ ] seo preview pic
