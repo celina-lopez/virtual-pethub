@@ -23,19 +23,19 @@ Checkout mine :)
 
 ## Getting Started <a name = "how_to_use"></a>
 
-1. Go to www.virtualpethub.com and entery your github username
+1. Go to https://virtual-pethub.com and enter your github username
 2. copy the code (sample below)
 3. paste on your readme!
 
 ```
 <div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/sparklepink/header.svg"/>
+  <img src="https://www.virtual-pethub.com/celina-lopez/sparklepink/header.svg?"/>
 </div>
 <div align="center">
-<img src="https://www.virtual-pethub.com/ripputchi/celina-lopez/pink.gif" height="200">
+  <img src="https://www.virtual-pethub.com/ripputchi/celina-lopez/pink.gif?" height="200">
 </div>
 <div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg"/>
+  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg?"/>
 </div>
 ```
 
@@ -92,5 +92,5 @@ If you are active, your pet would love it!
 
 ### Todo <a name = "future"></a>
 
-- [ ] hover over contributions
-- [ ] seo preview pic
+- [ ] hover over contributions'
+- [ ] rules on readme

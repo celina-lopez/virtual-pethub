@@ -49,7 +49,7 @@ async def upload(username, request: Request, theme: str = "pink", pet: str = "ha
 @app.get("/{username}/{pet}/{theme}.gif")
 def get_image(username, pet, theme):
   gif = virtual_pet.generate_file_response(pet, username, theme)
-  headers = {"Cache-Control:": "max-age=108000"}
+  headers = {"Cache-Control:": "no-cache"}
   return FileResponse(gif, headers=headers)
 
 
@@ -62,7 +62,7 @@ def get_image(username, theme):
 def get_image(username):
   data = virtual_pet.fetch_info(username)
   content = virtual_pet.generate_contribution_count(data['total_contributions'])
-  headers = {"Cache-Control:": "max-age=108000"}
+  headers = {"Cache-Control:": "no-cache"}
   return Response(content=content, media_type="image/svg+xml", headers=headers)
 
 
