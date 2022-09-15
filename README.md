@@ -1,6 +1,8 @@
 # Virtual PetHub
 virtual pet survives on your contributions!
 
+![](https://www.virtual-pethub.com/static/mokumokutchi/whine-donut.gif?)
+
 Checkout mine :)
 
 <div align="center">
