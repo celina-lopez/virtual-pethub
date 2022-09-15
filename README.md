@@ -1,7 +1,6 @@
-# Virtual PetHub
+# Virtual PetHub UNDER CONSTRUCTION
 virtual pet survives on your contributions!
 
-![jhg](https://www.virtual-pethub.com/static/mokumokutchi/whine-pink.gif?)
 
 Checkout mine :)
 
