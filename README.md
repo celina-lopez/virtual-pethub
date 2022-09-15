@@ -1,7 +1,7 @@
 # Virtual PetHub
 virtual pet survives on your contributions!
 
-![](https://www.virtual-pethub.com/static/mokumokutchi/whine-donut.gif?)
+![jhg](https://www.virtual-pethub.com/static/mokumokutchi/whine-pink.gif?)
 
 Checkout mine :)
 
