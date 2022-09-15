@@ -51,7 +51,7 @@ No contributions this week?
 
 If you are active, your pet would love it! 
 
-<img src="https://www.virtual-pethub.com/static/ripputchi/dancing-rainbow.gif" height="200">
+<img src="https://www.virtual-pethub.com/static/ripputchi/dancing-rainbow.gif?" height="200">
 
 
 ## Theme Reference <a name = "theme"></a>
