@@ -4,11 +4,7 @@ virtual pet survives on your contributions!
 
 Checkout mine :)
 
-
-<picture>
- <source media="(prefers-color-scheme: dark)" srcset="https://www.virtual-pethub.com/celina-lopez/pink.svg">
- <img alt="Shows an illustrated sun in light color mode and a moon with stars in dark color mode." src="https://www.virtual-pethub.com/celina-lopez/pink.svg">
-</picture>
+[![Virtual Pet](https://www.virtual-pethub.com/celina-lopez/ping.svg)](https://github.com/celina-lopez)
 
 
 ## Table of Contents
@@ -16,7 +12,6 @@ Checkout mine :)
 - [How to keep your pet alive](#rules)
 - [Theme Reference](#theme)
 
-CHANGE BELOW
 
 ## Getting Started <a name = "how_to_use"></a>
 
