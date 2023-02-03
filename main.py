@@ -25,6 +25,19 @@ async def index(request: Request):
             "readme": mistune.html(readme_content)
         })
 
+@app.get("/examples/{mood}.svg")
+def get_example_image(mood, theme: str = "pink"):
+  return Response(
+    content=virtual_pet.generate_svg(
+      virtual_pet.get_color_theme(theme)["#216e39"],
+      "mrs_github",
+      mood,
+      virtual_pet.get_theme(theme),
+      "some"
+    ),
+    media_type="image/svg+xml"
+  )
+
 
 @app.get("/{username}")
 async def upload(username, request: Request, theme: str = "pink"):

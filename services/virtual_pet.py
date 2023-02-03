@@ -342,6 +342,7 @@ def generate_svg(default_color, username, mood, theme, total_contributions):
       </svg>
     """.format(**args)
 
+
 def generate(username, theme):
   data = fetch_info(username)
   return generate_svg(
