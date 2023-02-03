@@ -4,7 +4,11 @@ virtual pet survives on your contributions!
 
 Checkout mine :)
 
-[![Virtual Pet](https://www.virtual-pethub.com/celina-lopez/pink.svg)](https://github.com/celina-lopez)
+
+<picture>
+ <source media="(prefers-color-scheme: dark)" srcset="https://www.virtual-pethub.com/celina-lopez/pink.svg">
+ <img alt="Shows an illustrated sun in light color mode and a moon with stars in dark color mode." src="https://www.virtual-pethub.com/celina-lopez/pink.svg">
+</picture>
 
 
 ## Table of Contents
