@@ -1,6 +1,5 @@
 import requests
-
-# TODO: average commits per week github 
+from . import characters
 
 color_theme = {
   "blue": {
@@ -9,20 +8,6 @@ color_theme = {
     '#40c463': "#7986cb",
     '#30a14e': "#3949ab",
     '#216e39': "#1a237e",
-  },
-  "black": {
-    "#ebedf0": "#ebedf0",
-    '#9be9a8': "#c5cae9",
-    '#40c463': "#7986cb",
-    '#30a14e': "#3949ab",
-    '#216e39': "#1a237e",
-  },
-  "mermaid": {
-    "#ebedf0": "#ebedf0",
-    '#9be9a8': "#6dc5fb",
-    '#40c463': "#f6f68c",
-    '#30a14e': "#8affa4",
-    '#216e39': "#f283d1",
   },
   "pink": {
     "#ebedf0": "#ebedf0",
@@ -80,20 +65,13 @@ color_theme = {
     '#30a14e': "#e53935",
     '#216e39': "#b71c1c",
   },
-  "rainbow": {
+  "retro": {
     "#ebedf0": "#ebedf0",
     '#9be9a8': "#6dc5fb",
     '#40c463': "#f6f68c",
     '#30a14e': "#8affa4",
     '#216e39': "#f283d1",
   },
-  # "retro": {
-  #   "#ebedf0": "#ebedf0",
-  #   '#9be9a8': "#6dc5fb",
-  #   '#40c463': "#f6f68c",
-  #   '#30a14e': "#8affa4",
-  #   '#216e39': "#f283d1",
-  # },
   "sparklegreen": {
     "#ebedf0": "#ebedf0",
     '#9be9a8': "#f0f4c3",
@@ -137,46 +115,23 @@ color_theme = {
     '#216e39': "#ff4e50",
   },
 }
-
-themes = color_theme.keys()
-
-display_themes = {
-  "babyblue": "baby blue",
-  "black": "black",
-  "blue" : "blue",
-  "comic": "comic",
-  "donut": "donut",
-  "flower": "flower",
-  "green": "green",
-  "love": "love",
-  "mermaid": "mermaid",
-  "pink": "pink",
-  "rainbow": "rainbow",
-  # "retro": "retro",
-  "sparklegreen": "sparkley green",
-  "sparklepink": "sparkley pink",
-  "sparklered": "sparkley red",
-  "white": "white",
-  "whitepink": "white pink",
-  "yellow": "yellow",
-}
-
-pets = [
-  # "mametchi",
-  "kurupoyotchi",
-  "kurupoyotchi_pink",
-  "kurupoyotchi_blue",
-  "hanbunkotchi",
-  "mokumokutchi",
-  "ripputchi",
-  "yumehotchi",
+themes = [
+  "babyblue",
+  "blue",
+  "comic",
+  "donut",
+  "flower",
+  "green",
+  "love",
+  "pink",
+  "retro",
+  "sparklegreen",
+  "sparklepink",
+  "sparklered",
+  "white",
+  "whitepink",
+  "yellow",
 ]
-
-def get_pet(pet):
-  if pet in pets:
-    return pet
-  else: 
-    return pets[0]
 
 def get_color_theme(theme):
   if theme in themes:
@@ -214,8 +169,10 @@ def points_to_quote(points):
   else:
     return "keep up the good work!"
 
+
 def fetch_info(username):
-  accessToken = "at"
+  # delete the below soon
+  accessToken = ""
 
   endpoint = "https://api.github.com/graphql"
   headers = {"Authorization": f"Bearer {accessToken}"}
@@ -251,7 +208,7 @@ def fetch_info(username):
     if contribution_days[i]['contributionCount']:
       recent_contribution_count += contribution_days[i]['contributionCount']
       points+= 1
-    
+  
   return {
     "mood": points_to_pet(points),
     "total_contributions": recent_contribution_count,
@@ -259,42 +216,29 @@ def fetch_info(username):
     "weeks": data['contributionsCollection']['contributionCalendar']['weeks'],
   }
 
-def generate_header(default_color, username):
-  return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="50" fill="none" role="img" aria-labelledby="descId">
+
+def generate_svg(default_color, username, mood, theme, total_contributions):
+  moods = characters.get_emotion("cat", mood)
+  args =   {
+    'default_color': default_color,
+    'username': username,
+    'mood_one': moods[0],
+    'mood_two': moods[1],
+    'theme': theme,
+    'total_contributions': total_contributions,
+  }
+  if mood == "dead":
+    return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="350" viewBox="0 0 300 350" fill="none" role="img" aria-labelledby="descId">
         <style>
           .header {{
             font: 600 18px "Courier New", Courier, monospace,  Ubuntu, "Helvetica Neue", Sans-Serif;
-            fill: {0};
+            fill: {default_color};
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }}
           @supports(-moz-appearance: auto) {{
             /* Selector detects Firefox */
             .header {{ font-size: 15.5px; }}
           }}
-          /* Animations */
-          @keyframes fadeInAnimation {{
-            from {{
-              opacity: 0;
-            }}
-            to {{
-              opacity: 1;
-            }}
-          }}
-        </style>
-        <g data-testid="card-title" transform="translate(0, 15)">
-          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" data-testid="header">{1}'s</text>
-        </g>
-        <g data-testid="card-title" transform="translate(0, 35)">
-          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" >Virtual Pet</text>
-        </g>
-      </svg>
-    """.format(default_color, username)
-
-
-
-def generate_contribution_count(total_contributions):
-  return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="30" fill="none" role="img" aria-labelledby="descId">
-        <style>
           .stat {{
             font: 600 14px "Courier New", Courier, monospace, Ubuntu, "Helvetica Neue", Sans-Serif; fill: #434d58;
           }}
@@ -318,16 +262,94 @@ def generate_contribution_count(total_contributions):
             }}
           }}
         </style>
-        <g class="stagger" style="animation-delay: 450ms">
-          <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{0} recent contributions</text>
+        <g data-testid="card-title" transform="translate(0, 35)">
+          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" data-testid="header">{username}'s</text>
+        </g>
+        <g data-testid="card-title" transform="translate(0, 55)">
+          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" >Virtual Pet</text>
+        </g>
+        <g data-testid="main-card-body" transform="translate(10, 100)">
+          <g transform="scale(.2, .2) translate(230, -150)" fill="#000000" stroke="none">
+            {mood_one}
+          </g>
+          <g class="stagger" style="animation-delay: 450ms" transform="translate(0, 185)">
+            <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{total_contributions} recent contributions</text>
+          </g>
         </g>
       </svg>
-    """.format(total_contributions)
-
-
-def generate_file_response(pet, username, theme):
-  mood = fetch_info(username)["mood"]
-  if mood == "dead":
-    return "static/%s-%s.gif" % (mood, get_theme(theme))
+    """.format(**args)
   else:
-    return "static/%s/%s-%s.gif" % (get_pet(pet), mood, get_theme(theme))
+    return """<svg xmlns="http://www.w3.org/2000/svg" width="300" height="350" viewBox="0 0 300 350" fill="none" role="img" aria-labelledby="descId">
+        <style>
+          .header {{
+            font: 600 18px "Courier New", Courier, monospace,  Ubuntu, "Helvetica Neue", Sans-Serif;
+            fill: {default_color};
+            animation: fadeInAnimation 0.8s ease-in-out forwards;
+          }}
+          @supports(-moz-appearance: auto) {{
+            /* Selector detects Firefox */
+            .header {{ font-size: 15.5px; }}
+          }}
+          .stat {{
+            font: 600 14px "Courier New", Courier, monospace, Ubuntu, "Helvetica Neue", Sans-Serif; fill: #434d58;
+          }}
+        
+          @supports(-moz-appearance: auto) {{
+          /* Selector detects Firefox */
+            .stat {{ font-size:12px; }}
+          }}
+          .stagger {{
+            opacity: 0;
+            animation: fadeInAnimation 0.3s ease-in-out forwards;
+          }}
+          .bold {{ font-weight: 700 }}
+          /* Animations */
+          @keyframes fadeInAnimation {{
+            from {{
+              opacity: 0;
+            }}
+            to {{
+              opacity: 1;
+            }}
+          }}
+        @keyframes alt-blink-animation {{
+          0% {{ opacity: 1;}}
+          100% {{ opacity: 0;}}
+        }}
+          .pet {{
+            animation: alt-blink-animation 1s steps(2, start) infinite;
+          }}
+        </style>
+        <g data-testid="card-title" transform="translate(0, 35)">
+          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" data-testid="header">{username}'s</text>
+        </g>
+        <g data-testid="card-title" transform="translate(0, 55)">
+          <text class="header"  x="50%" dominant-baseline="middle" text-anchor="middle" >Virtual Pet</text>
+        </g>
+        <g data-testid="main-card-body" transform="translate(10, 100)">
+          <g transform="scale(.03, -.03) translate(546, -6608)" fill="#000000" stroke="none">
+            <rect xmlns="http://www.w3.org/2000/svg" x="1250" y="1125" rx="10" ry="10" width="6000" height="6000" stroke="black" fill="pink" stroke-width="500"/> 
+            {mood_one}
+          </g>
+          <g transform="scale(.03, -.03) translate(546, -6608)" class="pet" fill="#000000" stroke="none">
+            <rect xmlns="http://www.w3.org/2000/svg" x="1250" y="1125" rx="10" ry="10" width="6000" height="6000" stroke="black" fill="pink" stroke-width="500"/>
+            {mood_two}
+          </g>
+          <g class="stagger" style="animation-delay: 450ms" transform="translate(0, 185)">
+            <text class="stat bold" x="50%" dominant-baseline="middle" text-anchor="middle"  y="12.5">{total_contributions} recent contributions</text>
+          </g>
+        </g>
+      </svg>
+    """.format(**args)
+
+def generate(username, theme):
+  data = fetch_info(username)
+  return generate_svg(
+    get_color_theme(theme)["#216e39"],
+    username,
+    data['mood'],
+    get_theme(theme),
+    data['total_contributions']
+  )
+
+

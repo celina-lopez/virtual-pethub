@@ -4,23 +4,15 @@ virtual pet survives on your contributions!
 
 Checkout mine :)
 
-<div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/pink/header.svg"/>
-</div>
-<div align="center">
-<div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/ripputchi/sparklepink.gif?disable-cache=123" height="200" />
-</div>
-</div>
-<div align="center">
-  <img src="https://www.virtual-pethub.com/celina-lopez/contributions.svg?disable-cache=123"/>
-</div>
+[![Contribution Stats](https://www.virtual-pethub.com/celina-lopez/ping.svg)](https://github.com/celina-lopez)
+
 
 ## Table of Contents
 - [Getting Started](#how_to_use)
 - [How to keep your pet alive](#rules)
 - [Theme Reference](#theme)
 
+CHANGE BELOW
 
 ## Getting Started <a name = "how_to_use"></a>
 
