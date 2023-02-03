@@ -43,7 +43,7 @@ async def upload(username, request: Request, theme: str = "pink"):
         })
 
 @app.get("/{username}/{theme}.svg")
-def get_image(username, request: Request, theme: str = "pink"):
+def get_image(username, theme: str = "pink"):
   return Response(content=virtual_pet.generate(username, theme), media_type="image/svg+xml")
 
 if __name__ == "__main__":
