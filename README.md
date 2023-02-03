@@ -53,6 +53,6 @@ If you are active, your pet would love it!
 
 ### Todo <a name = "future"></a>
 
-- [ ] darkmode
 - [ ] themes
 - [ ] grave site
+- [ ] fix freak
