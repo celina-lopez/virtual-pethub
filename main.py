@@ -57,7 +57,8 @@ async def upload(username, request: Request, theme: str = "pink"):
 
 @app.get("/{username}/{theme}")
 def get_image(username, theme: str = "pink"):
-  return Response(content=virtual_pet.generate(username, theme), media_type="image/svg+xml")
+  headers = {"Cache-Control:": "max-age=108000"}
+  return Response(content=virtual_pet.generate(username, theme), media_type="image/svg+xml", headers=headers)
 
 if __name__ == "__main__":
     load_dotenv()
