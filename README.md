@@ -4,7 +4,7 @@ virtual pet survives on your contributions!
 
 Checkout mine :)
 
-![Virtual Pet](https://www.virtual-pethub.com/celina-lopez/pink.svg)
+![Virtual Pet](https://www.virtual-pethub.com/celina-lopez/pink)
 
 
 ## Table of Contents
